@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سَهلَه — استقبل طلباتك على واتساب مرتبة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14213d;--paper:#f3f7f5;--sun:#f4b400;--go:#1c8c4e;--line:#d5e0db}
+*{box-sizing:border-box}
+body{margin:0;font-family:Cairo,Tahoma,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.8;font-size:17px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{padding:18px 0;font-weight:800;font-size:20px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:28px 0 56px}
+h1{font-size:clamp(30px,5vw,46px);line-height:1.35;margin:0 0 14px;font-weight:800}
+.hero p{margin:0 0 24px;max-width:34ch}
+.btn{display:inline-block;background:var(--go);color:#fff;border:0;border-radius:10px;padding:14px 26px;font:inherit;font-weight:800;cursor:pointer;text-decoration:none}
+.btn:hover{background:#17743f}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.note{font-size:14px;margin-top:10px;opacity:.75}
+.phone{background:#fff;border:2px solid var(--ink);border-radius:22px;padding:16px;max-width:320px;margin-inline:auto}
+.phone small{display:block;opacity:.6;margin-bottom:8px}
+.msg{background:#e3f6ea;border-radius:12px 12px 12px 2px;padding:12px 14px;font-size:15px;line-height:1.9;white-space:pre-line}
+section{padding:40px 0;border-top:1px solid var(--line)}
+h2{font-size:26px;margin:0 0 16px}
+.pain li{margin-bottom:6px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;border-top:4px solid var(--sun);padding-top:12px}
+.steps li::before{content:counter(s) ".";font-weight:800;margin-inline-end:6px}
+footer{padding:30px 0 50px;font-size:14px;opacity:.7}
+@media(max-width:720px){.hero{grid-template-columns:1fr}.steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>سَهلَه</header>
+
+<div class="hero">
+<div>
+<h1>طلبات محلّك توصلك على واتساب مرتبة، مش ضايعة في الرسايل</h1>
+<p>بتبيع على إنستجرام أو واتساب؟ خد لينك واحد بمنتجاتك. العميل يختار ويكتب عنوانه، وانت تستلم الطلب كامل.</p>
+<button class="btn" id="join">سجّل في قايمة الانتظار</button>
+<div class="note">مجاني في البداية. من غير متجر، من غير برمجة.</div>
+</div>
+<div class="phone" aria-label="مثال لطلب واصل على واتساب">
+<small>طلب جديد وصلك</small>
+<div class="msg">طلب جديد من منى
+• كوب سيراميك قطة × 2
+• الإجمالي: 360 جنيه
+العنوان: مدينة نصر، شارع ...
+الدفع: عند الاستلام</div>
+</div>
+</div>
+
+<section>
+<h2>مشاكل بتعرفها</h2>
+<ul class="pain">
+<li>طلب ضاع وسط 50 رسالة، وعميل زعل.</li>
+<li>كل مرة بتسأل: العنوان إيه؟ المقاس إيه؟ الدفع إزاي؟</li>
+<li>مش عارف مين اتأكد ومين اتشحن.</li>
+</ul>
+</section>
+
+<section>
+<h2>بتشتغل إزاي</h2>
+<ol class="steps">
+<li>تضيف منتجاتك بصورها وأسعارها، وتاخد لينك واحد.</li>
+<li>تحطه في البايو والستوري. العميل يختار ويبعت طلبه.</li>
+<li>الطلب يوصلك على واتساب مرتب، وتتابع حالته من لوحة بسيطة.</li>
+</ol>
+</section>
+
+<footer>سَهلَه — نسخة تجريبية. بنبني بالتعاون مع أول 20 بائع.</footer>
+</div>
+
+<script>
+const WA_NUMBER = "201104159670";
+document.getElementById("join").addEventListener("click", function () {
+  const text = encodeURIComponent("أهلاً، عايز أسجّل في قايمة انتظار سَهلَه.\nاسم المحل:\nبتبيع إيه:\nبتبيع على: إنستجرام / واتساب / الاتنين");
+  window.open("https://wa.me/" + WA_NUMBER + "?text=" + text, "_blank");
+});
+</script>
+</body>
+</html>
